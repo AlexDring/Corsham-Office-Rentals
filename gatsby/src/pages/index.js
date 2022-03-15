@@ -1,5 +1,6 @@
 import * as React from 'react';
+import Navigation from '../components/Nav';
 
 export default function HomePage() {
-  return <div className="text-3xl font-bold underline">Hello world!</div>;
+  return <Navigation />;
 }
