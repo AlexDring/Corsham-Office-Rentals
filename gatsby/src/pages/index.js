@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import Hero from '../components/Hero';
-import Layout from '../components/Layout';
 
 export default function HomePage() {
   return (
@@ -12,7 +11,7 @@ export default function HomePage() {
           <div className="flex pt-32 pb-14 sm:pb-16 px-8 flex-wrap">
             <div className="w-full order-1 pt-8 sm:w-1/2 sm:order-0 sm:pt-0 px-6">
               <StaticImage
-                className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+                className="object-cover bg-gray-100 rounded-lg"
                 src="../images/Reception.jpeg"
               />
             </div>
@@ -45,7 +44,7 @@ export default function HomePage() {
             </div>
             <div className="w-full sm:w-1/2 px-6 pt-8 sm:pt-0">
               <StaticImage
-                className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+                className="object-cover bg-gray-100 rounded-lg"
                 src="../images/Kitchen.jpeg"
               />
             </div>

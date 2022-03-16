@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'gatsby';
 
 export default function Navigation() {
   return (
@@ -9,36 +10,36 @@ export default function Navigation() {
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="bg-red-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Home
-                </a>
-                <a
-                  href="/offices"
+                </Link>
+                <Link
+                  to="/offices"
                   className="text-white hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Offices
-                </a>
-                <a
-                  href="/treatment-rooms"
+                </Link>
+                <Link
+                  to="/studios"
                   className="text-white hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Studios
-                </a>
-                <a
-                  href="/contact"
+                </Link>
+                <Link
+                  to="/treatment-rooms"
                   className="text-white hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Treatment Rooms
-                </a>
-                <a
-                  href="/offices"
+                </Link>
+                <Link
+                  to="/contact"
                   className="text-white hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Contact & Location
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -102,36 +103,36 @@ export default function Navigation() {
       <div className="hidden" id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-          <a
-            href="/"
+          <Link
+            to="/"
             className="bg-red-900 text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Home
-          </a>
-          <a
-            href="/offices"
+          </Link>
+          <Link
+            to="/offices"
             className="text-white hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Offices
-          </a>
-          <a
-            href="/studios"
+          </Link>
+          <Link
+            to="/studios"
             className="text-white hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Studios
-          </a>
-          <a
-            href="/treatment-rooms"
+          </Link>
+          <Link
+            to="/treatment-rooms"
             className="text-white hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Treatment Rooms
-          </a>
-          <a
-            href="/contact"
+          </Link>
+          <Link
+            to="/contact"
             className="text-white hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Contact & Location
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
