@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import Hero from '../components/Hero';
+import Availability from '../components/Availability';
 
 export default function HomePage() {
   return (
@@ -51,6 +52,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <Availability />
     </main>
   );
 }
