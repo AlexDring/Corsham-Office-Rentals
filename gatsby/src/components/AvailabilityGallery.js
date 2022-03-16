@@ -6,17 +6,17 @@ export default function AvailabilityGallery() {
     <section className="bg-gray-100">
       <div className="container mx-auto pt-6 px-4  pb-32">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AvailabilityCard />
-          <AvailabilityCard />
-          <AvailabilityCard />
-          <AvailabilityCard />
+          <AvailabilityGalleryCard />
+          <AvailabilityGalleryCard />
+          <AvailabilityGalleryCard />
+          <AvailabilityGalleryCard />
         </div>
       </div>
     </section>
   );
 }
 
-function AvailabilityCard() {
+function AvailabilityGalleryCard() {
   return (
     <div className="rounded-lg bg-white">
       <StaticImage

@@ -10,33 +10,34 @@ export default function Navigation() {
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-                <Link
-                  to="/"
-                  className="bg-red-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
+                <Link to="/" className="nav-item" activeClassName="active">
                   Home
                 </Link>
                 <Link
                   to="/offices"
-                  className="text-white hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="nav-item"
+                  activeClassName="active"
                 >
                   Offices
                 </Link>
                 <Link
                   to="/studios"
-                  className="text-white hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="nav-item"
+                  activeClassName="active"
                 >
                   Studios
                 </Link>
                 <Link
                   to="/treatment-rooms"
-                  className="text-white hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="nav-item"
+                  activeClassName="active"
                 >
                   Treatment Rooms
                 </Link>
                 <Link
                   to="/contact"
-                  className="text-white hover:bg-red-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="nav-item"
+                  activeClassName="active"
                 >
                   Contact & Location
                 </Link>
@@ -103,33 +104,34 @@ export default function Navigation() {
       <div className="hidden" id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-          <Link
-            to="/"
-            className="bg-red-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
+          <Link to="/" className="block nav-item" activeClassName="active">
             Home
           </Link>
           <Link
             to="/offices"
-            className="text-white hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            className="block nav-item"
+            activeClassName="active"
           >
             Offices
           </Link>
           <Link
             to="/studios"
-            className="text-white hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            className="block nav-item"
+            activeClassName="active"
           >
             Studios
           </Link>
           <Link
             to="/treatment-rooms"
-            className="text-white hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            className="block nav-item"
+            activeClassName="active"
           >
             Treatment Rooms
           </Link>
           <Link
             to="/contact"
-            className="text-white hover:bg-red-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            className="block nav-item"
+            activeClassName="active"
           >
             Contact & Location
           </Link>
