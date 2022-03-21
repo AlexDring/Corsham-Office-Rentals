@@ -12,8 +12,9 @@ export default {
       description: 'Add, edit, and reorder sections',
       of: [
         { type: 'banner' },
-        { type: 'information' },
-        { type: 'availableSpace' }
+        { type: 'highlights' },
+        { type: 'availableSpace' },
+        { type: 'titleWithDescription' }
         ],
       options: {
         sortable: false,

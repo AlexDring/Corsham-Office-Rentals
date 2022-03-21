@@ -9,6 +9,7 @@ import banner from './objects/banner'
 import information from './objects/information'
 import availability from './documents/availability'
 import availableSpace from './objects/availableSpace'
+import titleWithDescription from './objects/titleWithDescription'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -17,13 +18,13 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    /* Your types here! */
     /* Documents */
     home,
     availability,
     /* Objects */
     banner,
     information,
-    availableSpace
+    availableSpace,
+    titleWithDescription
   ]),
 })

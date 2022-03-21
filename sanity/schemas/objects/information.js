@@ -1,49 +1,49 @@
 export default {
-  name: 'information',
-  title: 'Information',
+  name: 'highlights',
+  title: 'Highlights',
   type: 'object',
   fields: [
     {
       name: 'firstImage',
-      title: 'Top Row Image',
+      title: 'Image',
       type: 'image',
-      description: 'Banner image'
+      description: 'Top row image'
     },
     {
       name: 'text',
       type: 'object',
-      title: 'Top Row Text',
+      title: 'Top row text',  
       fields: [
         {
           name: 'title',
           title: 'Title',
           type: 'string',
-          description: 'Banner title text'
+          description: 'Top row title'
         },
         { 
           name: 'text',
           title: 'Text',
           type: 'text',
-          description: 'Banner body text'
+          description: 'Top row text'
         },
       ]
     },
      {
       name: 'bottomText',
       type: 'object',
-      title: 'Bottom Row Text',
+      title: 'Bottom row text',
       fields: [
         {
           name: 'title',
           title: 'Title',
           type: 'string',
-          description: 'Banner title text'
+          description: 'Bottom row title'
         },
         { 
           name: 'text',
           title: 'Text',
           type: 'text',
-          description: 'Banner body text'
+          description: 'Bottom row text'
         },
       ]
     },
@@ -66,7 +66,7 @@ export default {
     prepare({ title, media }) {
       return {
         title,
-        subtitle: 'Information section',
+        subtitle: 'Highlights section',
         media,
       };
     },

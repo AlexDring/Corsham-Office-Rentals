@@ -1,6 +1,6 @@
 export default {
   name: 'availableSpace',
-  title: 'Avaible Space',
+  title: 'Available Space',
   type: 'object',
   fields: [
     {
