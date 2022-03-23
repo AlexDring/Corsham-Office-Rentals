@@ -2,22 +2,19 @@ import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { PropTypes } from 'prop-types';
 
-export default function Availability({ roomAvailability }) {
-  console.log(roomAvailability);
+export default function Availability({ title, availability }) {
   return (
     <section id="availability" className="bg-gray-100">
       <div className="container mx-auto pt-16 max-w-screen-xl">
         <div className="text-center">
-          <h2 className="text-4xl font-extrabold text-center pb-1">
-            Current Availability
-          </h2>
+          <h2 className="text-4xl font-extrabold text-center pb-1">{title}</h2>
           <p className="text-gray-500 text-lg px-4">
             For enquiries please contact francesround@hotmail.co.uk or call
             01225 891825
           </p>
         </div>
         <div className="flex pt-8 pb-16 justify-center flex-wrap mx-8s py-6">
-          {roomAvailability.nodes.map((room) => (
+          {availability.map((room) => (
             <AvailabilityCard {...room} />
           ))}
         </div>
@@ -44,7 +41,7 @@ function AvailabilityCard({ roomType, title, text }) {
 }
 
 Availability.propTypes = {
-  roomAvailability: PropTypes.array,
+  // roomAvailability: PropTypes.array,
 };
 
 AvailabilityCard.propTypes = {

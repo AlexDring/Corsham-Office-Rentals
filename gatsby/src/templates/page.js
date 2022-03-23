@@ -6,9 +6,7 @@ import Hero from '../components/Hero';
 import { Highlights } from '../components/Highlights';
 
 export default function Page({ data }) {
-  const { page, roomAvailability } = data;
-
-  const pageElements = page._rawContent.map((element) => {
+  const pageElements = data.page._rawContent.map((element) => {
     let el = null;
     switch (element._type) {
       case 'banner':
@@ -18,7 +16,7 @@ export default function Page({ data }) {
         el = <Highlights {...element} />;
         break;
       case 'availableSpace':
-        el = <Availability roomAvailability={roomAvailability} {...element} />;
+        el = <Availability {...element} />;
         break;
       case 'titleWithDescription':
         el = <Description {...element} />;
@@ -30,7 +28,7 @@ export default function Page({ data }) {
     return el;
   });
 
-  return pageElements;
+  return <main>{pageElements}</main>;
 }
 
 export const query = graphql`
@@ -41,13 +39,6 @@ export const query = graphql`
         current
       }
       _rawContent
-    }
-    roomAvailability: allSanityAvailability {
-      nodes {
-        roomType
-        title
-        text
-      }
     }
   }
 `;

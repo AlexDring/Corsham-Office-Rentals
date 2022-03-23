@@ -4,11 +4,11 @@ import createSchema from 'part:@sanity/base/schema-creator'
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
-import home from './documents/page'
+import page from './documents/page'
 import banner from './objects/banner'
 import highlights from './objects/highlights'
 import highlightsText from './objects/highlightsText'
-import availability from './documents/availability'
+import availability from './objects/availability'
 import availableSpace from './objects/availableSpace'
 import titleWithDescription from './objects/titleWithDescription'
 
@@ -20,12 +20,12 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Documents */
-    home,
-    availability,
+    page,
     /* Objects */
     banner,
     highlights,
     highlightsText,
+    availability,
     availableSpace,
     titleWithDescription
   ]),

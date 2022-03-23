@@ -2,7 +2,6 @@ export default {
   title: 'Availability',
   name: 'availability',
   type: 'document',
-  description: 'A list of our current available office/treatment rooms/studios',
   icon: () => '🏢',
   fields: [{
     title: 'Room Type',

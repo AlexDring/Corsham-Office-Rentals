@@ -7,8 +7,14 @@ export default {
       name: 'title',
       title: 'Availability Header',
       type: 'string',
-      description: 'Displays items that have been added to the Availability section (In the content column).',
     },
+    {
+      name: 'availability',
+      title: 'Availability',
+      description: 'A list of our current available office/treatment rooms/studios',
+      type: 'array',
+      of: [{ name:'availability', title: 'Available space', type: 'availablity'}]
+    }
   ],
   preview: {
     select: {
