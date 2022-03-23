@@ -15,7 +15,7 @@ export default function Availability({ title, availability }) {
         </div>
         <div className="flex pt-8 pb-16 justify-center flex-wrap mx-8s py-6">
           {availability.map((room) => (
-            <AvailabilityCard {...room} />
+            <AvailabilityCard key={room._key} {...room} />
           ))}
         </div>
       </div>
@@ -41,7 +41,8 @@ function AvailabilityCard({ roomType, title, text }) {
 }
 
 Availability.propTypes = {
-  // roomAvailability: PropTypes.array,
+  title: PropTypes.string,
+  availability: PropTypes.array,
 };
 
 AvailabilityCard.propTypes = {

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import * as React from 'react';
 import Availability from '../components/Availability';
@@ -10,16 +11,16 @@ export default function Page({ data }) {
     let el = null;
     switch (element._type) {
       case 'banner':
-        el = <Hero {...element} />;
+        el = <Hero key={element._key} {...element} />;
         break;
       case 'highlights':
-        el = <Highlights {...element} />;
+        el = <Highlights key={element._key} {...element} />;
         break;
       case 'availableSpace':
-        el = <Availability {...element} />;
+        el = <Availability key={element._key} {...element} />;
         break;
       case 'titleWithDescription':
-        el = <Description {...element} />;
+        el = <Description key={element._key} {...element} />;
         break;
       default:
         el = null;
@@ -42,3 +43,7 @@ export const query = graphql`
     }
   }
 `;
+
+Page.propTypes = {
+  data: PropTypes.object,
+};
