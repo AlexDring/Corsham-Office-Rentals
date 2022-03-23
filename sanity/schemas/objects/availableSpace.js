@@ -9,11 +9,16 @@ export default {
       type: 'string',
     },
     {
-      name: 'availability',
+      name: 'availabilitySelect',
       title: 'Availability',
-      description: 'A list of our current available office/treatment rooms/studios',
       type: 'array',
-      of: [{ name:'availability', title: 'Available space', type: 'availablity'}]
+      of: [
+        { 
+          name: 'availablity',
+          title: 'Current Availability',
+          type: 'availablity'
+        }
+      ]
     }
   ],
   preview: {

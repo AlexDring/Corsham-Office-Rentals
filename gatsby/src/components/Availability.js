@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import { PropTypes } from 'prop-types';
 
-export default function Availability({ title, availability }) {
+export default function Availability({ title, availabilitySelect, image }) {
   return (
     <section id="availability" className="bg-gray-100">
       <div className="container mx-auto pt-16 max-w-screen-xl">
@@ -14,7 +14,7 @@ export default function Availability({ title, availability }) {
           </p>
         </div>
         <div className="flex pt-8 pb-16 justify-center flex-wrap mx-8s py-6">
-          {availability.map((room) => (
+          {availabilitySelect.map((room) => (
             <AvailabilityCard key={room._key} {...room} />
           ))}
         </div>
@@ -23,11 +23,14 @@ export default function Availability({ title, availability }) {
   );
 }
 
-function AvailabilityCard({ roomType, title, text }) {
+function AvailabilityCard({ roomType, title, text, image }) {
   return (
     <div className="bg-white rounded-lg shadow-md w-4/5 sm:w-2/5 lg:w-3/10 mb-7 mx-4">
       <div>
-        <StaticImage className="rounded-t-lg" src="../images/Kitchen.jpeg" />
+        <GatsbyImage
+          className="rounded-t-lg"
+          image={image.asset.gatsbyImageData}
+        />
       </div>
       <div className="px-6 pt-6 pb-10">
         <p className="text-xs text-red-600 font-semibold uppercase">
@@ -42,11 +45,13 @@ function AvailabilityCard({ roomType, title, text }) {
 
 Availability.propTypes = {
   title: PropTypes.string,
-  availability: PropTypes.array,
+  availabilitySelect: PropTypes.array,
+  image: PropTypes.node,
 };
 
 AvailabilityCard.propTypes = {
   roomType: PropTypes.string,
   title: PropTypes.string,
   text: PropTypes.string,
+  image: PropTypes.node,
 };

@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export function Description({ title, description }) {
+export default function Description({ title, description }) {
   return (
     <section className="bg-gray-100">
       <div className="container mx-auto py-12">
@@ -27,3 +28,8 @@ export function Description({ title, description }) {
     </section>
   );
 }
+
+Description.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+};

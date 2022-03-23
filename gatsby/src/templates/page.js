@@ -2,12 +2,13 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import * as React from 'react';
 import Availability from '../components/Availability';
-import { Description } from '../components/Description';
+import Description from '../components/Description';
 import Hero from '../components/Hero';
-import { Highlights } from '../components/Highlights';
+import Highlights from '../components/Highlights';
 
 export default function Page({ data }) {
-  const pageElements = data.page._rawContent.map((element) => {
+  console.log(data);
+  const pageElements = data.page.content.map((element) => {
     let el = null;
     switch (element._type) {
       case 'banner':
@@ -39,7 +40,62 @@ export const query = graphql`
       slug {
         current
       }
-      _rawContent
+      content {
+        ... on SanityBanner {
+          _key
+          _type
+          image {
+            asset {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+          }
+          title
+          text
+        }
+        ... on SanityAvailableSpace {
+          _key
+          _type
+          title
+          availabilitySelect {
+            image {
+              asset {
+                gatsbyImageData(placeholder: BLURRED, width: 384)
+              }
+            }
+            roomType
+            text
+            title
+          }
+        }
+        ... on SanityHighlights {
+          _key
+          _type
+          bottomHighlightsText {
+            text
+            title
+          }
+          firstImage {
+            asset {
+              gatsbyImageData(placeholder: BLURRED, width: 760)
+            }
+          }
+          secondImage {
+            asset {
+              gatsbyImageData(placeholder: BLURRED, width: 760)
+            }
+          }
+          topHighlightsText {
+            text
+            title
+          }
+        }
+        ... on SanityTitleWithDescription {
+          _key
+          _type
+          description
+          title
+        }
+      }
     }
   }
 `;

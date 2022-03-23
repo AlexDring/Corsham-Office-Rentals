@@ -15,7 +15,6 @@ module.exports = {
         token: process.env.SANITY_TOKEN,
       },
     },
-    'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     `gatsby-plugin-postcss`,
@@ -25,6 +24,7 @@ module.exports = {
         icon: 'src/images/icon.png',
       },
     },
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

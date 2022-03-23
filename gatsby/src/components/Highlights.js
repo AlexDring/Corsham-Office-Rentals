@@ -1,15 +1,22 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
+import PropTypes from 'prop-types';
 
-export function Highlights({ bottomHighlightsText, topHighlightsText }) {
+export default function Highlights({
+  bottomHighlightsText,
+  firstImage,
+  topHighlightsText,
+  secondImage,
+}) {
+  console.log(topHighlightsText);
   return (
     <section className="bg-gray-50">
       <div className="container mx-auto max-w-screen-xl">
         <div className="flex pt-32 pb-14 sm:pb-16 px-8 flex-wrap">
           <div className="w-full order-1 pt-8 sm:w-1/2 sm:order-0 sm:pt-0 px-6">
-            <StaticImage
+            <GatsbyImage
               className="object-cover bg-gray-100 rounded-lg"
-              src="../images/Reception.jpeg"
+              image={firstImage.asset.gatsbyImageData}
             />
           </div>
           <div className="w-full px-8 sm:w-1/2 order-0 sm:order-1 sm:px-6">
@@ -34,9 +41,9 @@ export function Highlights({ bottomHighlightsText, topHighlightsText }) {
             </p>
           </div>
           <div className="w-full sm:w-1/2 px-6 pt-8 sm:pt-0">
-            <StaticImage
+            <GatsbyImage
               className="object-cover bg-gray-100 rounded-lg"
-              src="../images/Kitchen.jpeg"
+              image={secondImage.asset.gatsbyImageData}
             />
           </div>
         </div>
@@ -44,3 +51,10 @@ export function Highlights({ bottomHighlightsText, topHighlightsText }) {
     </section>
   );
 }
+
+Highlights.propTypes = {
+  bottomHighlightsText: PropTypes.object,
+  topHighlightsText: PropTypes.object,
+  firstImage: PropTypes.node,
+  secondImage: PropTypes.node,
+};

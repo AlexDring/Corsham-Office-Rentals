@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
-export default function Hero({ title, text }) {
+export default function Hero({ title, text, image }) {
   return (
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -47,11 +48,17 @@ export default function Hero({ title, text }) {
         </div>
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <StaticImage
+        <GatsbyImage
           className="w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="../images/Exterior.jpeg"
+          image={image.asset.gatsbyImageData}
         />
       </div>
     </div>
   );
 }
+
+Hero.propTypes = {
+  title: PropTypes.node,
+  text: PropTypes.node,
+  image: PropTypes.node,
+};
