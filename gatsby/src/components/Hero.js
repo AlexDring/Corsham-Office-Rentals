@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
 
-export default function Hero() {
+export default function Hero({ title, text }) {
   return (
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -19,15 +19,10 @@ export default function Hero() {
           <main className="flex flex-col justify-center h-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-4xl">
-                Everything you need to accommodate and help run your business
+                {title}
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Leafield Health & Business Centre is a modern fully refurbished
-                treatment rooms & office facilities situated on the Leafield
-                Industrial Estate in the market town of Corsham. We are a small
-                family run business offering a friendly and pleasant environment
-                in which to work. There is ample free parking for all who use
-                the centre.
+                {text}
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">

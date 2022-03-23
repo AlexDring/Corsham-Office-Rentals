@@ -5,6 +5,19 @@ export default {
   icon: () => '📑',
   fields: [
     { title: 'Title', name: 'title', type: 'string'},
+    { title: 'Path', name: 'slug', type: 'slug', description: 'This is the website path the page will accessible on',
+    options: {
+      //Change to schema title to automatically populate
+      source: "title",
+      slugify: (input) =>
+        input
+          .toLowerCase()
+          //Remove spaces
+          .replace(/\s+/g, "-")
+          //Remove special characters
+          .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ""),
+      validation: (Rule) => Rule.required(),
+    }, },
     {
       name: 'content',
       type: 'array',
@@ -17,7 +30,6 @@ export default {
         { type: 'titleWithDescription' }
         ],
       options: {
-        sortable: false,
         layout: 'tags',
         editModal: 'fullscreen'
       }

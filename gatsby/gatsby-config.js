@@ -1,16 +1,20 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `corsham-office-rentals`,
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
-    //   {
-    //   resolve: 'gatsby-source-sanity',
-    //   options: {
-    //     "projectId": "chergncb",
-    //     "dataset": "production"
-    //   }
-    // },
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'chergncb',
+        dataset: 'production',
+        watchMode: true,
+        token: process.env.SANITY_TOKEN,
+      },
+    },
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',

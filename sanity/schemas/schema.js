@@ -6,7 +6,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 import home from './documents/page'
 import banner from './objects/banner'
-import information from './objects/information'
+import highlights from './objects/highlights'
+import highlightsText from './objects/highlightsText'
 import availability from './documents/availability'
 import availableSpace from './objects/availableSpace'
 import titleWithDescription from './objects/titleWithDescription'
@@ -23,7 +24,8 @@ export default createSchema({
     availability,
     /* Objects */
     banner,
-    information,
+    highlights,
+    highlightsText,
     availableSpace,
     titleWithDescription
   ]),
