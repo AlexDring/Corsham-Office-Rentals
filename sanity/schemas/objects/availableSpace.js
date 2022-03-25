@@ -1,7 +1,10 @@
+import { FiBriefcase } from 'react-icons/fi'
+
 export default {
   name: 'availableSpace',
   title: 'Available Space',
   type: 'object',
+  icon: FiBriefcase,  
   fields: [
     {
       name: 'title',

@@ -30,7 +30,7 @@ export default {
   },
   preview: {
     select: {
-      title: 'text.title',
+      title: 'topHighlightsText.title',
       media: 'firstImage'
     },
     prepare({ title, media }) {
