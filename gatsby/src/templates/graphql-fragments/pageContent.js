@@ -57,6 +57,18 @@ export const pageContent = graphql`
         description
         title
       }
+      ... on SanityGallery {
+        _key
+        _type
+        images {
+          title
+          image {
+            asset {
+              gatsbyImageData
+            }
+          }
+        }
+      }
     }
   }
 `;

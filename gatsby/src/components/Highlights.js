@@ -8,7 +8,6 @@ export default function Highlights({
   topHighlightsText,
   secondImage,
 }) {
-  console.log(topHighlightsText);
   return (
     <section className="bg-gray-50">
       <div className="container mx-auto max-w-screen-xl">

@@ -36,6 +36,7 @@ export default {
         { type: 'highlights' },
         { type: 'availableSpace' },
         { type: 'titleWithDescription' },
+        { type: 'gallery' },
       ],
       options: {
         layout: 'tags',

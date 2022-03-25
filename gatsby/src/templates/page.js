@@ -5,9 +5,9 @@ import Availability from '../components/Availability';
 import Description from '../components/Description';
 import Hero from '../components/Hero';
 import Highlights from '../components/Highlights';
+import Gallery from '../components/Gallery';
 
 export default function Page({ data }) {
-  console.log(data);
   const pageElements = data.page.content.map((element) => {
     let el = null;
     switch (element._type) {
@@ -22,6 +22,9 @@ export default function Page({ data }) {
         break;
       case 'titleWithDescription':
         el = <Description key={element._key} {...element} />;
+        break;
+      case 'gallery':
+        el = <Gallery key={element._key} {...element} />;
         break;
       default:
         el = null;

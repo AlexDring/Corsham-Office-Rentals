@@ -15,6 +15,8 @@ import highlightsText from './objects/highlightsText'
 import availability from './objects/availability'
 import availableSpace from './objects/availableSpace'
 import titleWithDescription from './objects/titleWithDescription'
+import gallery from './objects/gallery'
+import galleryItem from './objects/galleryItem'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -33,6 +35,8 @@ export default createSchema({
     highlightsText,
     availability,
     availableSpace,
+    gallery,
+    galleryItem,
     titleWithDescription
   ]),
 })
