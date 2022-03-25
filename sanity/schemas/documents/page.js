@@ -1,8 +1,10 @@
+import { FiFile } from 'react-icons/fi'
+
 export default {
   title: 'Pages',
   name: 'page',
   type: 'document',
-  icon: () => '📑',
+  icon: FiFile,
   fields: [
     { title: 'Title', name: 'title', type: 'string'},
     { title: 'Path', name: 'slug', type: 'slug', description: 'This is the website path the page will accessible on',

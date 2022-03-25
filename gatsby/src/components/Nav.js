@@ -1,9 +1,34 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
+import { graphql, Link, StaticQuery } from 'gatsby';
 import { useState } from 'react';
 
 export default function Navigation() {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          allSanityRoute {
+            nodes {
+              menu {
+                page {
+                  slug {
+                    current
+                  }
+                }
+                title
+              }
+            }
+          }
+        }
+      `}
+      render={(data) => <NavBar {...data} />}
+    />
+  );
+}
+
+const NavBar = ({ allSanityRoute }) => {
   const [open, setOpen] = useState();
+  const { menu } = allSanityRoute.nodes[0];
   return (
     <nav className="bg-red-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,27 +40,15 @@ export default function Navigation() {
                 <Link to="/" className="nav-item" activeClassName="active">
                   Home
                 </Link>
-                <Link
-                  to="/offices"
-                  className="nav-item"
-                  activeClassName="active"
-                >
-                  Offices
-                </Link>
-                <Link
-                  to="/studios"
-                  className="nav-item"
-                  activeClassName="active"
-                >
-                  Studios
-                </Link>
-                <Link
-                  to="/treatment-rooms"
-                  className="nav-item"
-                  activeClassName="active"
-                >
-                  Treatment Rooms
-                </Link>
+                {menu.map((item) => (
+                  <Link
+                    to={`/${item.page.slug.current}`}
+                    className="nav-item"
+                    activeClassName="active"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
                 <Link
                   to="/contact"
                   className="nav-item"
@@ -115,30 +128,15 @@ export default function Navigation() {
           >
             Home
           </Link>
-          <Link
-            onClick={() => setOpen(!open)}
-            to="/offices"
-            className="block nav-item"
-            activeClassName="active"
-          >
-            Offices
-          </Link>
-          <Link
-            onClick={() => setOpen(!open)}
-            to="/studios"
-            className="block nav-item"
-            activeClassName="active"
-          >
-            Studios
-          </Link>
-          <Link
-            onClick={() => setOpen(!open)}
-            to="/treatment-rooms"
-            className="block nav-item"
-            activeClassName="active"
-          >
-            Treatment Rooms
-          </Link>
+          {menu.map((item) => (
+            <Link
+              to={`/${item.page.slug.current}`}
+              className="block nav-item"
+              activeClassName="active"
+            >
+              {item.title}
+            </Link>
+          ))}
           <Link
             onClick={() => setOpen(!open)}
             to="/contact"
@@ -151,4 +149,4 @@ export default function Navigation() {
       </div>
     </nav>
   );
-}
+};

@@ -3,7 +3,6 @@ import * as React from 'react';
 import Page from '../templates/page';
 
 export default function HomePage(props) {
-  console.log(props);
   return <div>Donkey</div>;
 }
 

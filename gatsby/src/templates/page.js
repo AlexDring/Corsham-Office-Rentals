@@ -7,7 +7,6 @@ import Hero from '../components/Hero';
 import Highlights from '../components/Highlights';
 
 export default function Page({ data }) {
-  console.log(data);
   const pageElements = data.page.content.map((element) => {
     let el = null;
     switch (element._type) {
@@ -29,7 +28,6 @@ export default function Page({ data }) {
     }
     return el;
   });
-
   return <main>{pageElements}</main>;
 }
 
