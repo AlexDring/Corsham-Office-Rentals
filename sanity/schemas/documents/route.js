@@ -16,16 +16,11 @@ export default {
       of: [{ type: 'menu', name: 'menu', title: 'menu' }],
     },
   ],
-  // preview: {
-  //   select: {
-  //     title: 'slug.current',
-  //     subtitle: 'page.title',
-  //   },
-  //   prepare({ title, subtitle }) {
-  //     return {
-  //       title: ['/', title].join(''),
-  //       subtitle,
-  //     }
-  //   },
-  // },
+  preview: {
+    prepare() {
+      return {
+        title: 'Navigation Menu',
+      }
+    },
+  },
 }
