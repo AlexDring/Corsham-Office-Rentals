@@ -1,7 +1,10 @@
+import { FiGrid as icon } from 'react-icons/fi'
+
 export default {
   name: 'gallery',
   type: 'object',
   title: 'Gallery',
+  icon,
   fields: [
     {
       name: 'images',
@@ -21,12 +24,11 @@ export default {
       image: 'images.0.image',
     },
     prepare(selection) {
-      const { images, image } = selection;
+      const { images } = selection;
 
       return {
         title: `Gallery block of ${Object.keys(images).length} images`,
         subtitle: `Gallery section`,
-        media: image,
       };
     },
   },

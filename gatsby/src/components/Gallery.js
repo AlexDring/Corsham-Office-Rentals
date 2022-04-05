@@ -19,7 +19,6 @@ export default function Gallery({ images }) {
 }
 
 function GalleryItem({ title, image }) {
-  console.log(image);
   const [showDialog, setShowDialog] = React.useState(false);
   return (
     <>

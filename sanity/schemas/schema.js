@@ -17,6 +17,7 @@ import availableSpace from './objects/availableSpace'
 import titleWithDescription from './objects/titleWithDescription'
 import gallery from './objects/gallery'
 import galleryItem from './objects/galleryItem'
+import seo from './objects/seo'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,6 +38,7 @@ export default createSchema({
     availableSpace,
     gallery,
     galleryItem,
-    titleWithDescription
+    titleWithDescription,
+    seo,
   ]),
 })

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import * as React from 'react';
+import Helmet from 'react-helmet';
 import Availability from '../components/Availability';
 import Description from '../components/Description';
 import Hero from '../components/Hero';
@@ -8,7 +9,9 @@ import Highlights from '../components/Highlights';
 import Gallery from '../components/Gallery';
 
 export default function Page({ data }) {
-  const pageElements = data.page.content.map((element) => {
+  console.log(data);
+  const { content, seo } = data.page;
+  const pageElements = content.map((element) => {
     let el = null;
     switch (element._type) {
       case 'banner':
@@ -32,7 +35,20 @@ export default function Page({ data }) {
     }
     return el;
   });
-  return <main>{pageElements}</main>;
+  return (
+    <>
+      {seo && (
+        <Helmet>
+          <meta charSet="utf-8" />
+          {seo.metaTitle && <title>{seo.metaTitle}</title>}
+          {seo.metaDescription && (
+            <meta name="description" content={seo.metaDescription} />
+          )}
+        </Helmet>
+      )}
+      <main>{pageElements}</main>
+    </>
+  );
 }
 
 export const query = graphql`
@@ -41,6 +57,10 @@ export const query = graphql`
       title
       slug {
         current
+      }
+      seo {
+        metaTitle
+        metaDescription
       }
       ...pageContent
     }

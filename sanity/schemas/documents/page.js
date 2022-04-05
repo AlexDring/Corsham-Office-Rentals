@@ -1,18 +1,23 @@
-import { FiFile } from 'react-icons/fi'
+import { FiFileText } from 'react-icons/fi'
 
 export default {
   title: 'Pages',
   name: 'page',
   type: 'document',
-  icon: FiFile,
+  icon: FiFileText,
   fields: [
-    { title: 'Title', name: 'title', type: 'string' },
+    { 
+      title: 'Title', 
+      name: 'title', 
+      type: 'string', 
+      readOnly: ({document}) => document?.title === 'Home Page', 
+  },
     {
       title: 'Path',
       name: 'slug',
       type: 'slug',
       description: 'This is the website path the page will accessible on',
-      hidden: ({document}) => document?._id === 'homePage',
+      hidden: ({document}) => document?.title === 'Home Page', 
       options: {
         //Change to schema title to automatically populate
         source: 'title',
@@ -25,6 +30,11 @@ export default {
             .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ''),
         validation: (Rule) => Rule.required(),
       },
+    },
+    { 
+      name: 'seo',
+      title: "Page SEO Settings",
+      type: 'seo'
     },
     {
       name: 'content',

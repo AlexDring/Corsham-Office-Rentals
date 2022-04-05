@@ -21,7 +21,7 @@ export default () =>
           S.documentList('page')
             .title('Pages')
             .menuItems(S.documentTypeList('page').getMenuItems())
-            .filter('_type == "page" && _id != "homePage"')
+            .filter('_type == "page" && _id != "drafts.homePage" && _id != "homePage"')
         ),
         S.listItem()
         .title('Menu')
