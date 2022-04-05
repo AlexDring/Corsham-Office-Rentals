@@ -12,5 +12,13 @@ export const query = graphql`
       title
       ...pageContent
     }
+    allSanitySiteSettings {
+      nodes {
+        contact {
+          email
+          phone
+        }
+      }
+    }
   }
 `;

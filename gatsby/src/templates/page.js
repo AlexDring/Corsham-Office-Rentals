@@ -9,8 +9,9 @@ import Highlights from '../components/Highlights';
 import Gallery from '../components/Gallery';
 
 export default function Page({ data }) {
-  console.log(data);
   const { content, seo } = data.page;
+  console.log(data);
+  const { contact } = data.allSanitySiteSettings.nodes[0];
   const pageElements = content.map((element) => {
     let el = null;
     switch (element._type) {
@@ -21,10 +22,10 @@ export default function Page({ data }) {
         el = <Highlights key={element._key} {...element} />;
         break;
       case 'availableSpace':
-        el = <Availability key={element._key} {...element} />;
+        el = <Availability contact={contact} key={element._key} {...element} />;
         break;
       case 'titleWithDescription':
-        el = <Description key={element._key} {...element} />;
+        el = <Description contact={contact} key={element._key} {...element} />;
         break;
       case 'gallery':
         el = <Gallery key={element._key} {...element} />;
@@ -63,6 +64,14 @@ export const query = graphql`
         metaDescription
       }
       ...pageContent
+    }
+    allSanitySiteSettings {
+      nodes {
+        contact {
+          email
+          phone
+        }
+      }
     }
   }
 `;

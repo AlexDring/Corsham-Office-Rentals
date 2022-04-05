@@ -6,7 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Docucments
 import page from './documents/page'
-import route from './documents/route'
+// import route from './documents/route'
 // Objects
 import menu from './objects/menu'
 import banner from './objects/banner'
@@ -18,6 +18,9 @@ import titleWithDescription from './objects/titleWithDescription'
 import gallery from './objects/gallery'
 import galleryItem from './objects/galleryItem'
 import seo from './objects/seo'
+import contact from './objects/contact'
+import siteSettings from './documents/siteSettings'
+import route from './objects/route'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,9 +31,11 @@ export default createSchema({
   types: schemaTypes.concat([
     /* Documents */
     page,
-    route,
+    siteSettings,
     /* Objects */
     menu,
+    route,
+    contact,
     banner,
     highlights,
     highlightsText,

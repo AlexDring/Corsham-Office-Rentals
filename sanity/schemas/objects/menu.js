@@ -22,22 +22,5 @@ export default {
         },
       ],
     },
-    // {
-    //   title: 'Path',
-    //   name: 'slug',
-    //   type: 'slug',
-    //   description: 'This is the website path the page will accessible on.',
-    //   options: {
-    //     source: 'title',
-    //     slugify: (input) =>
-    //       input
-    //         .toLowerCase()
-    //         //Remove spaces
-    //         .replace(/\s+/g, '-')
-    //         //Remove special characters
-    //         .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ''),
-    //     validation: (Rule) => Rule.required(),
-    //   },
-    // },
   ],
 }

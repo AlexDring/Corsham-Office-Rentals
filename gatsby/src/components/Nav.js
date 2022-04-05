@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { graphql, Link, StaticQuery } from 'gatsby';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export default function Navigation() {
   return (
     <StaticQuery
       query={graphql`
         query {
-          allSanityRoute {
+          allSanitySiteSettings {
             nodes {
               menu {
                 page {
@@ -26,9 +27,9 @@ export default function Navigation() {
   );
 }
 
-const NavBar = ({ allSanityRoute }) => {
+const NavBar = ({ allSanitySiteSettings }) => {
   const [open, setOpen] = useState();
-  const { menu } = allSanityRoute.nodes[0];
+  const { menu } = allSanitySiteSettings.nodes[0];
   return (
     <nav className="bg-red-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -149,4 +150,8 @@ const NavBar = ({ allSanityRoute }) => {
       </div>
     </nav>
   );
+};
+
+NavBar.propTypes = {
+  allSanitySiteSettings: PropTypes.node,
 };

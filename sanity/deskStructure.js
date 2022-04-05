@@ -1,6 +1,6 @@
 // /deskStructure.js
 import S from '@sanity/desk-tool/structure-builder'
-import { FiHome, FiMap } from 'react-icons/fi'
+import { FiHome, FiSettings } from 'react-icons/fi'
 export default () =>
   S.list()
     .title('Content')
@@ -23,14 +23,29 @@ export default () =>
             .menuItems(S.documentTypeList('page').getMenuItems())
             .filter('_type == "page" && _id != "drafts.homePage" && _id != "homePage"')
         ),
+        // S.listItem()
+        // .title('Menu')
+        // .icon(FiMap)
+        // .child(
+        //   S.document()
+        //   .schemaType('route')
+        //   .documentId('211b7490-e62b-4b2a-9846-dccbe8ecf1e5')
+        //   ),
+        // S.listItem()
+        // .title('Contact Details')
+        // .icon(FiPhoneIncoming)
+        // .child(
+        //   S.document()
+        //   .schemaType('contact')
+        //   // .documentId('211b7490-e62b-4b2a-9846-dccbe8ecf1e5')
+        //   ),
         S.listItem()
-        .title('Menu')
-        .icon(FiMap)
+        .title('Site Settings')
+        .icon(FiSettings)
         .child(
           S.document()
-          .schemaType('route')
-          .documentId('211b7490-e62b-4b2a-9846-dccbe8ecf1e5')
+          .schemaType('siteSettings')
           ),
-          ...S.documentTypeListItems().filter(item => !['route', 'homePage', 'page'].includes(item.getId())),
+          ...S.documentTypeListItems().filter(item => !['route', 'page', 'contact', 'siteSettings'].includes(item.getId())),
       ]
     )
