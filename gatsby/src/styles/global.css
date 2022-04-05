@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* For Sanity image plugin placeholders */
+img {
+  width: 100%;
+}
+
 .nav-item {
   color: white;
   font-size: 0.875rem;
@@ -18,3 +23,15 @@
 .nav-item.active {
   background-color: rgb(127 29 29 / var(--tw-bg-opacity));
 }
+
+[data-reach-dialog-overlay]  [data-reach-dialog-content] {
+  width: 65%;
+  margin: 5vh auto;
+
+}
+@media(max-width: 520px) {
+    [data-reach-dialog-overlay]  [data-reach-dialog-content] {
+      width: 95%;
+      padding: 20px
+    }
+  }

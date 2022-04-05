@@ -1,5 +1,8 @@
 import * as React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import PropTypes from 'prop-types';
+import SanityImage from 'gatsby-plugin-sanity-image';
+import { Dialog } from '@reach/dialog';
+import '@reach/dialog/styles.css';
 
 export default function Gallery({ images }) {
   return (
@@ -17,13 +20,39 @@ export default function Gallery({ images }) {
 
 function GalleryItem({ title, image }) {
   console.log(image);
+  const [showDialog, setShowDialog] = React.useState(false);
   return (
-    <div className="rounded-lg bg-white">
-      <GatsbyImage
-        class="w-full rounded-t-lg"
-        image={image.asset.gatsbyImageData}
-      />
-      <p className="p-4 text-gray-500 text-md">{title}</p>
-    </div>
+    <>
+      <Dialog
+        className="rounded-lg"
+        isOpen={showDialog}
+        onDismiss={() => setShowDialog(false)}
+      >
+        <SanityImage class="w-full rounded-t-lg" {...image} alt="" />
+        <p className="pt-2 text-gray-500 text-md">{title}</p>
+      </Dialog>
+      <button
+        type="button"
+        onClick={() => setShowDialog(!showDialog)}
+        className="rounded-lg bg-white"
+      >
+        <SanityImage
+          class="w-full rounded-t-lg"
+          {...image}
+          width={300}
+          alt=""
+        />
+        <p className="p-4 text-gray-500 text-md">{title}</p>
+      </button>
+    </>
   );
 }
+
+Gallery.propTypes = {
+  images: PropTypes.node,
+};
+
+GalleryItem.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.node,
+};
