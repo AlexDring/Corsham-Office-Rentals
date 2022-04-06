@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useContact } from '../hooks/useContact';
 
-export default function Description({ title, description, contact }) {
-  const { email, phone } = contact;
+export default function Description({ title, description }) {
+  const { email, phone } = useContact();
+
   return (
     <section className="bg-gray-100">
       <div className="container mx-auto py-12">
@@ -30,5 +32,4 @@ export default function Description({ title, description, contact }) {
 Description.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  contact: PropTypes.object,
 };

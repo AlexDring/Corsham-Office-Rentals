@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
+import { useContact } from '../hooks/useContact';
 
 export default function Footer() {
+  const { email, phone } = useContact();
   return (
     <>
       <div className="bg-white">
@@ -57,18 +59,15 @@ export default function Footer() {
                 <h2 className="font-semibold text-gray-900 text-xs">EMAIL</h2>
                 <a
                   className="text-red-500 font-semibold"
-                  href="mailto:<?php the_field('email', 121); ?>?subject=Corsham%20Office%20Rental%20Enquiry"
+                  href={`mailto:${email}?subject=Corsham%20Office%20Rental%20Enquiry`}
                 >
-                  francesround@hotmail.co.uk
+                  {email}
                 </a>
                 <h2 className="font-semibold text-gray-900 text-xs mt-4">
                   PHONE
                 </h2>
-                <a
-                  className="text-red-500 font-semibold"
-                  href="tel:<?php the_field('phone', 121); ?>"
-                >
-                  01225 891825
+                <a className="text-red-500 font-semibold" href={`tel:${phone}`}>
+                  {phone}
                 </a>
               </div>
             </div>
