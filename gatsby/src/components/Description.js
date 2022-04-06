@@ -4,7 +4,6 @@ import { useContact } from '../hooks/useContact';
 
 export default function Description({ title, description }) {
   const { email, phone } = useContact();
-
   return (
     <section className="bg-gray-100">
       <div className="container mx-auto py-12">

@@ -8,15 +8,13 @@ export default function Navigation() {
     <StaticQuery
       query={graphql`
         query {
-          allSanitySiteSettings {
-            nodes {
-              menu {
-                page {
-                  slug {
-                    current
-                  }
+          sanitySiteSettings {
+            menu {
+              title
+              page {
+                slug {
+                  current
                 }
-                title
               }
             }
           }
@@ -27,9 +25,8 @@ export default function Navigation() {
   );
 }
 
-const NavBar = ({ allSanitySiteSettings }) => {
+const NavBar = ({ sanitySiteSettings: { menu } }) => {
   const [open, setOpen] = useState();
-  const { menu } = allSanitySiteSettings.nodes[0];
   return (
     <nav className="bg-red-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -153,5 +150,5 @@ const NavBar = ({ allSanitySiteSettings }) => {
 };
 
 NavBar.propTypes = {
-  allSanitySiteSettings: PropTypes.node,
+  sanitySiteSettings: PropTypes.node,
 };

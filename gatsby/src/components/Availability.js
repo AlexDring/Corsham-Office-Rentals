@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { PropTypes } from 'prop-types';
 import { useContact } from '../hooks/useContact';
 
 export default function Availability({ title, availabilitySelect, image }) {
   const { email, phone } = useContact();
-
   return (
     <section id="availability" className="bg-gray-100">
       <div className="container mx-auto pt-16 max-w-screen-xl">
