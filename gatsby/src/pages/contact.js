@@ -35,6 +35,7 @@ export default function Contact() {
   return (
     <>
       <Helmet>
+        <html lang="en" />
         <meta charSet="utf-8" />
         <title>Contact - Office Space Available - Corsham Office Rentals</title>
         <meta

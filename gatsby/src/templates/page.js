@@ -39,6 +39,7 @@ export default function Page({ data }) {
     <>
       {seo && (
         <Helmet>
+          <html lang="en" />
           <meta charSet="utf-8" />
           {seo.metaTitle && <title>{seo.metaTitle}</title>}
           {seo.metaDescription && (
