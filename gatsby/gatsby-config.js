@@ -3,7 +3,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: `corsham-office-rentals`,
-    siteUrl: `corshamofficerentals.co.uk/`,
+    siteUrl: `https://corshamofficerentals.co.uk`,
   },
   plugins: [
     {
