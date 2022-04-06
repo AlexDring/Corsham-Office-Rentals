@@ -28,7 +28,7 @@ function GalleryItem({ title, image }) {
         onDismiss={() => setShowDialog(false)}
       >
         <SanityImage class="w-full rounded-t-lg" {...image} alt="" />
-        <p className="pt-2 text-gray-500 text-md">{title}</p>
+        <p className="pt-2 text-gray-700 text-md">{title}</p>
       </Dialog>
       <button
         type="button"
@@ -41,7 +41,7 @@ function GalleryItem({ title, image }) {
           width={300}
           alt=""
         />
-        <p className="p-4 text-gray-500 text-md">{title}</p>
+        <p className="p-4 text-gray-700 text-md">{title}</p>
       </button>
     </>
   );

@@ -1,25 +1,31 @@
+import { FiAlignLeft as icon } from 'react-icons/fi'
+
 export default {
   name: 'titleWithDescription',
   title: 'Title with Description',
   type: 'object',
+  icon,
   fields: [
     {
       name: 'title',
       title: 'Title',
       type: 'string',
-      // description: 'Displays items that have been added to the Availability section (In the content column).',
     },
     {
       name: 'description',
       title: 'Description',
       type: 'text',
-      // description: 'Displays items that have been added to the Availability section (In the content column).',
     },
   ],
   preview: {
     select: {
       title: 'title',
-      subtitle: 'description'
     },
-  }
+    prepare({ title }) {
+      return {
+        title,
+        subtitle: 'Heading & Description Section'
+      };
+    },
+  },
 }

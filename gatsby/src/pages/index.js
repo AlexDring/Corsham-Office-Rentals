@@ -10,15 +10,11 @@ export const query = graphql`
   query {
     page: sanityPage(_id: { eq: "homePage" }) {
       title
-      ...pageContent
-    }
-    allSanitySiteSettings {
-      nodes {
-        contact {
-          email
-          phone
-        }
+      seo {
+        metaTitle
+        metaDescription
       }
+      ...pageContent
     }
   }
 `;

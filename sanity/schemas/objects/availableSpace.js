@@ -1,10 +1,10 @@
-import { FiBriefcase } from 'react-icons/fi'
+import { FiCheckSquare } from 'react-icons/fi'
 
 export default {
   name: 'availableSpace',
   title: 'Available Space',
   type: 'object',
-  icon: FiBriefcase,  
+  icon: FiCheckSquare,  
   fields: [
     {
       name: 'title',

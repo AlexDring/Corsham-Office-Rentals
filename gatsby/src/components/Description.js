@@ -20,9 +20,11 @@ export default function Description({ title, description }) {
             </a>
           </p>
         </div>
-        <p className="max-w-screen-md mx-4 sm:mx-auto bg-white p-8 mt-8 leading-7 text-slate-700 rounded-lg">
-          {description}
-        </p>
+        {description && (
+          <p className="max-w-screen-md mx-4 sm:mx-auto bg-white p-8 mt-8 leading-7 text-slate-700 rounded-lg whitespace-pre-line">
+            {description}
+          </p>
+        )}
       </div>
     </section>
   );

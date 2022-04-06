@@ -45,7 +45,7 @@ export default function Footer() {
             <div className="bg-white relative flex flex-wrap p-6 rounded shadow-md">
               <div className="px-6">
                 <h2 className="font-semibold text-gray-900 text-xs">ADDRESS</h2>
-                <address className="mt-1 text-gray-500 text-md not-italic">
+                <address className="mt-1 text-gray-700 text-md not-italic">
                   Unit 23
                   <br />
                   Leafield Industrial Estate <br />
@@ -58,7 +58,7 @@ export default function Footer() {
               <div className="px-6 mt-4 lg:mt-0">
                 <h2 className="font-semibold text-gray-900 text-xs">EMAIL</h2>
                 <a
-                  className="text-red-500 font-semibold"
+                  className="text-red-700 font-semibold"
                   href={`mailto:${email}?subject=Corsham%20Office%20Rental%20Enquiry`}
                 >
                   {email}
@@ -66,7 +66,7 @@ export default function Footer() {
                 <h2 className="font-semibold text-gray-900 text-xs mt-4">
                   PHONE
                 </h2>
-                <a className="text-red-500 font-semibold" href={`tel:${phone}`}>
+                <a className="text-red-700 font-semibold" href={`tel:${phone}`}>
                   {phone}
                 </a>
               </div>
