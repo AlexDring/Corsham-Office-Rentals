@@ -1,4 +1,3 @@
-import { navigate } from 'gatsby';
 import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 
@@ -11,8 +10,9 @@ function encode(data) {
 }
 
 export default function Contact() {
-  const [state, setState] = useState();
   const { email, phone } = useContact();
+  const [state, setState] = useState();
+  const [message, setMessage] = useState();
 
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -29,7 +29,9 @@ export default function Contact() {
         ...state,
       }),
     })
-      .then(() => navigate(form.getAttribute('action')))
+      .then(() =>
+        setMessage(`✅ Form submitted, thank you for getting in touch! `)
+      )
       .catch((error) => alert(error));
   };
   return (
@@ -100,7 +102,6 @@ export default function Contact() {
                     name="name"
                     onChange={handleChange}
                     id="name"
-                    action="/thanks/"
                     placeholder="Full Name"
                     className="w-100 mt-3 py-3 px-3 rounded-md bg-white border border-gray-300  text-gray-800 text-sm focus:border-red-600 focus:outline-none"
                   />
@@ -152,6 +153,7 @@ export default function Contact() {
                 >
                   Submit
                 </button>
+                {message && <div className="pt-5">{message}</div>}
               </form>
             </div>
           </div>

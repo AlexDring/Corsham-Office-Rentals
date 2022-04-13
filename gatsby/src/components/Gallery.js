@@ -27,7 +27,12 @@ function GalleryItem({ title, image }) {
         isOpen={showDialog}
         onDismiss={() => setShowDialog(false)}
       >
-        <SanityImage class="w-full rounded-t-lg" {...image} alt="" />
+        <SanityImage
+          class="w-full rounded-t-lg"
+          {...image}
+          width={800}
+          alt=""
+        />
         <p className="pt-2 text-gray-700 text-md">{title}</p>
       </Dialog>
       <button
