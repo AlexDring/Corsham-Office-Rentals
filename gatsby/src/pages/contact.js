@@ -11,7 +11,12 @@ function encode(data) {
 
 export default function Contact() {
   const { email, phone } = useContact();
-  const [state, setState] = useState();
+  const [state, setState] = useState({
+    name: '',
+    email: '',
+    tel: '',
+    message: '',
+  });
   const [message, setMessage] = useState();
 
   const handleChange = (e) => {
@@ -29,9 +34,15 @@ export default function Contact() {
         ...state,
       }),
     })
-      .then(() =>
-        setMessage(`✅ Form submitted, thank you for getting in touch! `)
-      )
+      .then(() => {
+        setMessage(`✅ Form submitted, thank you for getting in touch! `);
+        setState({
+          name: '',
+          email: '',
+          tel: '',
+          message: '',
+        });
+      })
       .catch((error) => alert(error));
   };
   return (
@@ -101,6 +112,7 @@ export default function Contact() {
                     type="text"
                     name="name"
                     onChange={handleChange}
+                    value={state.name}
                     id="name"
                     placeholder="Full Name"
                     className="w-100 mt-3 py-3 px-3 rounded-md bg-white border border-gray-300  text-gray-800 text-sm focus:border-red-600 focus:outline-none"
@@ -114,6 +126,7 @@ export default function Contact() {
                     type="email"
                     name="email"
                     onChange={handleChange}
+                    value={state.email}
                     id="email"
                     placeholder="Email"
                     className="w-100 mt-3 py-3 text-sm px-3 rounded-md bg-white border border-gray-300  text-gray-800  focus:border-red-600 focus:outline-none"
@@ -127,6 +140,7 @@ export default function Contact() {
                   <input
                     type="tel"
                     name="tel"
+                    value={state.tel}
                     onChange={handleChange}
                     id="tel"
                     placeholder="Telephone Number"
@@ -141,6 +155,7 @@ export default function Contact() {
                   <textarea
                     type="message"
                     name="message"
+                    value={state.message}
                     onChange={handleChange}
                     id="message"
                     placeholder="Enter message"
